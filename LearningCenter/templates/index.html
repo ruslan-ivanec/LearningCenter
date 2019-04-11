@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Центр</title>
+        {% load bootstrap3 %}
+        {% bootstrap_css %}
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="text-center page-header container-fluid"
+                style="font-family:Times; background-color: #eeeeff">
+                <h1>{{ centerName }}</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="container-fluid">
+                <div class="col-md-3">
+                    <!--<button type="button" class="btn btn-primary btn-lg btn-block">Дисципліни</button>-->
+                    <a href="{% url 'disc' %}" class="btn btn-primary btn-lg btn-block">Дисципліни</a>
+                    <br/>
+                </div>
+                <div class="col-md-3">
+                    <a href="{% url 'courses' %}" class="btn btn-primary btn-lg btn-block">Курси</a>
+                    <br/>
+                </div>
+                <div class="col-md-3">
+                    <a href="{% url 'teachers' %}" class="btn btn-primary btn-lg btn-block">Викладачі</a>
+                    <br/>
+                </div>
+                <div class="col-md-3">
+                    <a href="{% url 'center' %}" class="btn btn-primary btn-lg btn-block">Контакти</a>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

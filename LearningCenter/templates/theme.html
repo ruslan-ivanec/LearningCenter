@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Центр</title>
+        {% load bootstrap3 %}
+        {% bootstrap_css %}
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="text-center page-header container-fluid"
+                style="font-family:Times; background-color: #eeeeff">
+                <h1>{{ centerName }}</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <div class="container-fluid" style="font-family:Times;">
+                    <a href="{% url 'index' %}" class="btn btn-primary btn-lg">
+                        <span class="glyphicon glyphicon-arrow-left"></span> На головну</a>
+                </div>
+                <br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container-fluid text-center" style="font-family:Times;">
+                    <h2><b>Тема: <i>{{ them.name }}</i></b></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container-fluid" style="font-family:Times;">
+                    <h3>Курс: <b>{{ cour.name }}</b></h3>
+                     {% if them.amount != '' %}
+                        <h3>Обсяг: <b>{{ them.amount }}</b> (ак.год.)</h3>
+                    {% endif %}
+                    {% if them.pages != '' %}
+                        <h3>Обсяг матеріалів: <b>{{ them.pages }}</b> (стор.)</h3>
+                    {% endif %}
+                    <h3>Складність: <b>{{ them.complexity }}</b> (1..9)</h3>
+                    {% if notEmptyDescr %}
+                        <h3><b>Зміст теми:</b></h3>
+                        <h4>{{ them.description }}</h4>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+

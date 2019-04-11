@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Центр</title>
+        {% load bootstrap3 %}
+        {% bootstrap_css %}
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="text-center page-header container-fluid"
+                style="font-family:Times; background-color: #eeeeff">
+                <h1>{{ centerName }}</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="container-fluid" style="font-family:Times;">
+                    <a href="{% url 'index' %}" class="btn btn-primary btn-lg">
+                        <span class="glyphicon glyphicon-arrow-left"></span> На головну</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container-fluid" style="font-family:Times;">
+                    <h2><b>Контактні дані</b></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container-fluid" style="font-family:Times;">
+                    <h3>Навчальний центр: <b>{{ centerName }}</b></h3>
+                    <h3>Адреса: <b>{{ centerAddress }}</b></h3>
+                    <h3>Телефони: <b>{{ centerTel }}</b></h3>
+                    <h3>E-mail: <b>{{ centerEmail }}</b></h3>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
